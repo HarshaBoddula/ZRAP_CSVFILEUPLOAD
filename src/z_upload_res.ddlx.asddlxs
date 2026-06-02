@@ -1,0 +1,11 @@
+@Metadata.layer: #CORE
+annotate entity Z_UPLOAD_RES with
+{
+  @UI.lineItem: [{ position: 10, label: 'PO' }]        ebeln;
+  @UI.lineItem: [{ position: 20, label: 'Item' }]      ebelp;
+  @UI.lineItem: [{ position: 30, label: 'Amount' }]    amount;
+  @UI.lineItem: [{ position: 40, label: 'Currency' }]  currency;
+  @UI.lineItem: [{ position: 50, label: 'Reference' }] reference;
+  @UI.lineItem: [{ position: 60, label: 'Error' }]     error;
+  @UI.lineItem: [{ position: 70, label: 'Message' }]   error_msg;
+}

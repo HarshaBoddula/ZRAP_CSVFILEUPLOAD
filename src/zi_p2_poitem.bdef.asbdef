@@ -1,0 +1,46 @@
+managed implementation in class zbp_i_p2_poitem unique;
+strict ( 2 );
+
+with draft;
+
+
+define behavior for ZI_P2_POITEM //alias <alias_name>
+persistent table zp2_t_poitem
+draft table zp2_t_poitem_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Po, Item;
+
+  static action UploadCSV deep parameter Z_UPLOAD_CSV result [0..*] Z_UPLOAD_RES ;
+  static action calcStockAmountDeep deep parameter ZA_PRODUCT_ROOT result [1] ZA_AMOUNT;
+//  side effects { action UploadCSV affects entity ZI_P2_POITEM; }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zp2_t_poitem
+  {
+    Po = ebeln;
+    Item = ebelp;
+    Amount = amount;
+    Currency = currency;
+    Error = error;
+    ErrorMsg = error_msg;
+    Reference = reference;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}

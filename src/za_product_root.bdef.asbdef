@@ -1,0 +1,11 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+define behavior for ZA_PRODUCT_ROOT alias Root
+{
+    association _product;
+}
+
+define behavior for ZA_PRODUCT_TABLE alias Product
+{
+}

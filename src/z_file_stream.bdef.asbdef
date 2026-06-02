@@ -1,0 +1,6 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+define behavior for Z_FILE_STREAM //alias <alias_name>
+{
+}

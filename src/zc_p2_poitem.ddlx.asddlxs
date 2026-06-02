@@ -1,0 +1,19 @@
+@Metadata.layer: #CORE
+annotate view ZC_P2_POITEM with
+{
+  @UI.lineItem: [{ position: 10 }] Po;
+  @UI.lineItem: [{ position: 20 }] Item;
+  @UI.lineItem: [{ position: 30 }] Amount;
+  @UI.lineItem: [{ position: 40,     type: #FOR_ACTION,
+    dataAction: 'UploadCSV',
+    label: 'Upload CSV' }] 
+    Reference;
+  @UI.lineItem: [{ position: 50 }] LocalCreatedBy;
+  @UI.lineItem: [{ position: 60,     type: #FOR_ACTION,
+    dataAction: 'calcStockAmountDeep',
+    label: 'Total Amount' }] 
+//  @UI.lineItem: [{ position: 60 }]
+   LocalCreatedAt;
+
+
+}

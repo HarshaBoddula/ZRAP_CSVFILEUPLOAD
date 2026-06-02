@@ -1,0 +1,7 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+define behavior for Z_UPLOAD_CSV //alias <alias_name>
+{
+association _StreamProperties with hierarchy;
+}

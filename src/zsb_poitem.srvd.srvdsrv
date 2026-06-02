@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZSB_POITEM {
+  expose ZC_P2_POITEM;
+}
